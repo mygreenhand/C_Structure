@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+#define TRUE 1
+#define FALSE 0
+
+
 //定义链表结构
 typedef struct Node{
     int data;
     struct Node* next;
 
 } Node;
+
 
 //是否为空链表
 int isEmptyLink(Node* link){
@@ -50,19 +56,21 @@ void tailInsertNode(Node* link,int data){
 }
 
 //删除对应值得节点
-void deleteNode(Node* link, int data){
+int deleteNode(Node* link, int data){
     Node* pre = link;
     Node* current = link -> next;
     while(current){
         if(current -> data == data){
             pre -> next = current -> next;
             free(current);
-            break;
+            return TRUE;
         }
         pre = current;
         current = current -> next;
     }
     link -> data --;
+
+    return FALSE；
 }
 
 //遍历整个链表节点
