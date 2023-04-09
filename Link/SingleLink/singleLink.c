@@ -70,7 +70,7 @@ int deleteNode(Node* link, int data){
     }
     link -> data --;
 
-    return FALSE；
+    return FALSE;
 }
 
 //遍历整个链表节点
@@ -108,14 +108,16 @@ void findNode(Node* link,int data){
 int main(){
     Node* link = initLink();
     
-    // int i;
-    // for(i = 1; i <= 20; i++){
+    int i;
+    for(i = 1; i <= 20; i++){
     //     //headInsetNode(link,i);
-    //     tailInsertNode(link,i); 
-    // }
+        tailInsertNode(link,i); 
+    }
     
     printNode(link);
     findNode(link, 10);
+    deleteNode(link, 10);
+    printNode(link);
     return 0;
 
 }
