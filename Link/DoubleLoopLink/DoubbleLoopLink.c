@@ -14,6 +14,8 @@ Node* initLink(){
 	node -> data = 0;
 	node -> pre = node;
 	node -> next = node;
+
+	return node;
 }
 
 
